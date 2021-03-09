@@ -132,35 +132,3 @@ export default ({
   );
 };
 
-export const query = graphql`
-  query($productId: String!) {
-    allBigCommerceProducts(filter: { id: { eq: $productId } }) {
-      nodes {
-        id
-        bigcommerce_id
-        name
-        sku
-        price
-        calculated_price
-        retail_price
-        sale_price
-        map_price
-        description
-        weight
-        images {
-          url_standard
-          url_thumbnail
-        }
-        variants {
-          product_id
-          id
-          option_values {
-            label
-            option_display_name
-          }
-          sku
-        }
-      }
-    }
-  }
-`;
